@@ -1,0 +1,214 @@
+nmap -iL bahadurgah.txt -sS -sV -p- --script=vuln,default -T4 -O nmap_results.txt
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-16 08:03 EDT
+Stats: 0:00:29 elapsed; 0 hosts completed (0 up), 0 undergoing Script Pre-Scan
+NSE Timing: About 88.89% done; ETC: 08:03 (0:00:04 remaining)
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Stats: 0:01:29 elapsed; 0 hosts completed (4 up), 4 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 17.97% done; ETC: 08:08 (0:03:39 remaining)
+Stats: 0:07:00 elapsed; 0 hosts completed (4 up), 4 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 93.55% done; ETC: 08:10 (0:00:26 remaining)
+Stats: 0:30:29 elapsed; 0 hosts completed (4 up), 4 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 99.93% done; ETC: 08:33 (0:00:01 remaining)
+Nmap scan report for 192.168.8.142
+Host is up (0.0034s latency).
+Not shown: 65510 filtered tcp ports (no-response)
+PORT      STATE  SERVICE       VERSION
+135/tcp   open   msrpc         Microsoft Windows RPC
+139/tcp   open   netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open   microsoft-ds?
+5040/tcp  open   unknown
+5357/tcp  open   http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-title: Service Unavailable
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+5889/tcp  open   tcpwrapped
+7680/tcp  open   pando-pub?
+20777/tcp open   tcpwrapped
+49664/tcp open   msrpc         Microsoft Windows RPC
+49665/tcp open   msrpc         Microsoft Windows RPC
+49666/tcp open   msrpc         Microsoft Windows RPC
+49667/tcp open   msrpc         Microsoft Windows RPC
+49668/tcp open   msrpc         Microsoft Windows RPC
+49671/tcp closed unknown
+49675/tcp closed unknown
+49696/tcp open   tcpwrapped
+49704/tcp closed unknown
+49732/tcp open   http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Service
+49735/tcp open   ssl/http      Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| ssl-cert: Subject: commonName=127.0.0.1
+| Subject Alternative Name: DNS:localhost, DNS:127.0.0.1, IP Address:127.0.0.1
+| Not valid before: 2025-04-05T08:45:54
+|_Not valid after:  2037-04-05T08:45:54
+|_ssl-date: TLS randomness does not represent time
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-title: Service
+|_http-server-header: Microsoft-HTTPAPI/2.0
+| tls-alpn: 
+|_  http/1.1
+56670/tcp closed unknown
+60659/tcp closed unknown
+61249/tcp closed unknown
+61499/tcp open   tcpwrapped
+61852/tcp closed unknown
+61902/tcp closed unknown
+MAC Address: 00:BE:43:E9:5A:CA (Dell)
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 10 (88%)
+OS CPE: cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Microsoft Windows 10 (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2025-07-16T12:36:24
+|_  start_date: N/A
+|_smb-vuln-ms10-054: false
+|_clock-skew: 1s
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_nbstat: NetBIOS name: CAO_BAH1, NetBIOS user: <unknown>, NetBIOS MAC: 00:be:43:e9:5a:ca (Dell)
+
+Nmap scan report for 192.168.8.100
+Host is up (0.0041s latency).
+Not shown: 65396 filtered tcp ports (no-response), 125 closed tcp ports (reset)
+PORT      STATE SERVICE       VERSION
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+5040/tcp  open  unknown
+5889/tcp  open  tcpwrapped
+7680/tcp  open  pando-pub?
+20777/tcp open  tcpwrapped
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49678/tcp open  msrpc         Microsoft Windows RPC
+52506/tcp open  tcpwrapped
+MAC Address: F8:89:D2:B8:EA:85 (Cloud Network Technology Singapore PTE.)
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 10 (88%)
+OS CPE: cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Microsoft Windows 10 (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_nbstat: NetBIOS name: AOM_MADHU, NetBIOS user: <unknown>, NetBIOS MAC: f8:89:d2:b8:ea:85 (Cloud Network Technology Singapore PTE.)
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2025-07-16T12:36:09
+|_  start_date: N/A
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+
+Nmap scan report for 192.168.8.89
+Host is up (0.013s latency).
+Not shown: 65399 filtered tcp ports (no-response), 122 closed tcp ports (reset)
+PORT      STATE SERVICE    VERSION
+135/tcp   open  tcpwrapped
+139/tcp   open  tcpwrapped
+445/tcp   open  tcpwrapped
+5040/tcp  open  tcpwrapped
+5889/tcp  open  tcpwrapped
+7680/tcp  open  tcpwrapped
+20777/tcp open  tcpwrapped
+49220/tcp open  tcpwrapped
+49664/tcp open  tcpwrapped
+49665/tcp open  tcpwrapped
+49666/tcp open  tcpwrapped
+49667/tcp open  tcpwrapped
+49681/tcp open  tcpwrapped
+49712/tcp open  tcpwrapped
+MAC Address: 4C:49:6C:51:02:AC (Intel Corporate)
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 10|11 (85%)
+OS CPE: cpe:/o:microsoft:windows_10 cpe:/o:microsoft:windows_11
+Aggressive OS guesses: Microsoft Windows 10 1703 or Windows 11 21H2 (85%), Microsoft Windows 10 (85%), Microsoft Windows 10 20H2 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_nbstat: NetBIOS name: CREDIT_UMESHL, NetBIOS user: <unknown>, NetBIOS MAC: 4c:49:6c:51:02:ac (Intel Corporate)
+|_smb-vuln-ms10-054: false
+|_clock-skew: -3s
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+| smb2-time: 
+|   date: 2025-07-16T12:36:07
+|_  start_date: N/A
+
+Nmap scan report for 192.168.8.87
+Host is up (0.016s latency).
+Not shown: 65466 filtered tcp ports (no-response), 54 closed tcp ports (reset)
+PORT      STATE SERVICE       VERSION
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+5040/tcp  open  unknown
+5357/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-title: Service Unavailable
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+5889/tcp  open  tcpwrapped
+7680/tcp  open  pando-pub?
+20777/tcp open  tcpwrapped
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49673/tcp open  msrpc         Microsoft Windows RPC
+52235/tcp open  msrpc         Microsoft Windows RPC
+MAC Address: 74:97:79:18:BB:FD (Cloud Network Technology Singapore PTE.)
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 10|11|2008|2022|7 (90%)
+OS CPE: cpe:/o:microsoft:windows_10 cpe:/o:microsoft:windows_11 cpe:/o:microsoft:windows_server_2008:r2:sp1 cpe:/o:microsoft:windows_server_2022 cpe:/o:microsoft:windows_7
+Aggressive OS guesses: Microsoft Windows 10 (90%), Microsoft Windows 10 1703 or Windows 11 21H2 (90%), Microsoft Windows 10 20H2 (89%), Microsoft Windows 11 21H2 (88%), Microsoft Windows 10 1507 - 1607 (87%), Microsoft Windows 10 1511 - 1607 (87%), Microsoft Windows 10 1703 (87%), Microsoft Server 2008 R2 SP1 (87%), Microsoft Windows 10 1511 (87%), Microsoft Windows Server 2022 (87%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+| smb2-time: 
+|   date: 2025-07-16T12:36:34
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+|_nbstat: NetBIOS name: CAO_VIKASG, NetBIOS user: <unknown>, NetBIOS MAC: 74:97:79:18:bb:fd (Cloud Network Technology Singapore PTE.)
+|_smb-vuln-ms10-054: false
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_clock-skew: 9s
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 4 IP addresses (4 hosts up) scanned in 2192.02 seconds
